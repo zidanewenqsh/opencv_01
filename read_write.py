@@ -11,6 +11,7 @@ print("height,width", height, width)
 # 下面的 None 本应该是输出图像的尺寸，但是因为后边我们设置了缩放因子
 # 因此这里为 None
 res = cv2.resize(img, None, fx=0.3, fy=0.3, interpolation=cv2.INTER_CUBIC)
+print("res.shape", res.shape)
 
 #OR
 # 这里呢，我们直接设置输出图像的尺寸，所以不用设置缩放因子
@@ -18,5 +19,6 @@ res = cv2.resize(img, None, fx=0.3, fy=0.3, interpolation=cv2.INTER_CUBIC)
 
 cv2.imshow("4.jpg", res)
 # cv2.imshow("4.jpg", img) # 原图太大
+cv2.imwrite("./images/04.jpg",res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
